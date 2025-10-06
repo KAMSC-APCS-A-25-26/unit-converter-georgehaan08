@@ -18,6 +18,9 @@ public class TimeConverter
         mins1 = mins * 60;
         total = hours1 + mins1 + secs;
 
-        System.out.println("(3600 * " + hours + " Hours)" + " +" + " (60 * " + mins + " Minutes)" + " +" + " (1 * " + secs + " Seconds)" + " = " + total + " Seconds");
+        System.out.println("Calculation:");
+        System.out.println(hours + " hours x 3600 = " + hours1 + " Seconds");
+        System.out.println(mins + " hours x 60 = " + mins1 + " Seconds");
+        System.out.println(secs + " hours x 1 = " + secs + " Seconds");
+        System.out.println("Total: " + total + " Seconds");
     }
-}
