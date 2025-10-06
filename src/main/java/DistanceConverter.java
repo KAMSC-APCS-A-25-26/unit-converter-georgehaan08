@@ -22,14 +22,14 @@ public class DistanceConverter
                 case 1:
                     System.out.print("Enter Miles: ");
                     mi = sc.nextDouble();
-                    km = mi * 1.609344;
+                    km = mi * 1.60935;
                     System.out.println(km);
                     break;
 
                 case 2:
                     System.out.print("Enter Kilometers: ");
                     km = sc.nextDouble();
-                    mi = km * 0.621371;
+                    mi = km / 1.60935;
                     System.out.println(mi);
                     break;
 
