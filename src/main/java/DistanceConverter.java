@@ -1,45 +1,49 @@
 import java.util.Scanner;
 
-public class DistanceConverter
-{
+public class DistanceConverter {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        Boolean status = true;
-        Double km, mi;
-        while (status)
+        boolean status = true;
+        int choice;
+
+        while(status)
         {
-            System.out.println("\n\n\nChoose an option:");
-            System.out.println("1: Miles to Kilometers");
-            System.out.println("2: Kilometers to Miles");
-            System.out.println("3: Exit");
-            System.out.print("Enter choice: ");
-
-            int choice = sc.nextInt();
-
-            switch (choice)
+            System.out.println("\n\nMake a selection ");
+            System.out.println("1, Kilos to Miles ");
+            System.out.println("2, Miles to Kilos ");
+            System.out.println("3, Exit ");
+            choice = sc.nextInt();
+            switch(choice)
             {
                 case 1:
-                    System.out.print("Enter Miles: ");
-                    mi = sc.nextDouble();
-                    km = mi * 1.60935;
-                    System.out.println(km);
+                {
+                    System.out.println("Enter Kilos: ");
+                    double kilos = sc.nextDouble();
+                    double old = kilos;
+                    kilos /= 1.60935;
+                    System.out.println("Conversion Results: ");
+                    System.out.println("Kilos: " + old);
+                    System.out.println("Miles: " + kilos);
                     break;
-
+                }
                 case 2:
-                    System.out.print("Enter Kilometers: ");
-                    km = sc.nextDouble();
-                    mi = km / 1.60935;
-                    System.out.println(mi);
+                {
+                    System.out.println("Enter Miles: ");
+                    double miles = sc.nextDouble();
+                    double old = miles;
+                    miles *= 1.60935;
+                    System.out.println("Conversion Results: ");
+                    System.out.println("Miles: " + old);
+                    System.out.println("Kilos: " + miles);
                     break;
-
+                }
                 case 3:
-                    status = false;
+                {
                     System.out.println("Goodbye!");
+                    status = false;
                     break;
-
-                default:
-                    System.out.println("Enter 1, 2, or 3");
+                }
             }
         }
     }
