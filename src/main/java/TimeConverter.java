@@ -24,3 +24,4 @@ public class TimeConverter
         System.out.println(secs + " hours x 1 = " + secs + " Seconds");
         System.out.println("Total: " + total + " Seconds");
     }
+}
