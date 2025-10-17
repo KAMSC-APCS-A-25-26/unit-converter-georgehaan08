@@ -1,49 +1,48 @@
 import java.util.Scanner;
 
-public class DistanceConverter {
+public class DistanceConverter
+{
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        boolean status = true;
-        int choice;
-
-        while(status)
+        Boolean status = true;
+        Double km, mi;
+        while (status)
         {
-            System.out.println("\n\nMake a selection ");
-            System.out.println("1, Kilos to Miles ");
-            System.out.println("2, Miles to Kilos ");
-            System.out.println("3, Exit ");
-            choice = sc.nextInt();
-            switch(choice)
+            System.out.println("Choose conversion direction:");
+            System.out.println("1: Convert Miles to Kilometers");
+            System.out.println("2: Convert Kilometers to Miles");
+            System.out.println("3: Exit");
+            System.out.print("Enter choice: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice)
             {
                 case 1:
-                {
-                    System.out.println("Enter Kilos: ");
-                    double kilos = sc.nextDouble();
-                    double old = kilos;
-                    kilos /= 1.60935;
+                    System.out.print("Enter Miles: ");
+                    mi = sc.nextDouble();
+                    km = mi * 1.60935;
                     System.out.println("Conversion Results: ");
-                    System.out.println("Kilos: " + old);
-                    System.out.println("Miles: " + kilos);
+                    System.out.println("Miles: "+ mi);
+                    System.out.println("Kilometers: " + km);
                     break;
-                }
+
                 case 2:
-                {
-                    System.out.println("Enter Miles: ");
-                    double miles = sc.nextDouble();
-                    double old = miles;
-                    miles *= 1.60935;
-                    System.out.println("Conversion Results: ");
-                    System.out.println("Miles: " + old);
-                    System.out.println("Kilos: " + miles);
+                    System.out.print("Enter Kilometers: ");
+                    km = sc.nextDouble();
+                    mi = km / 1.60935;
+                    System.out.println("Kilometers: "+ km);
+                    System.out.println("Miles: " + mi);
                     break;
-                }
+
                 case 3:
-                {
-                    System.out.println("Goodbye!");
                     status = false;
+                    System.out.println("Goodbye!");
                     break;
-                }
+
+                default:
+                    System.out.println("Enter 1, 2, or 3");
             }
         }
     }
